@@ -22,9 +22,10 @@ class ViewController: UIViewController {
         reloadLocalTime()
     }
     private func addEventListeners() {
-        NotificationCenter.default.addObserver(self, selector: #selector(onAppForeground), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(resyncDate), name: Notification.Name.NSSystemClockDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(resyncDate), name: UIApplication.significantTimeChangeNotification, object: nil)
     }
-    @objc private func onAppForeground() {
+    @objc private func resyncDate() {
         fetchSourceOftruthDate()
         reloadLocalTime()
     }
