@@ -3,7 +3,6 @@
 //  SynchronizedDate
 //
 //  Created by Juan Carlos Ospina Gonzalez on 19/04/2019.
-//  Copyright © 2019 Juan Carlos Ospina Gonzalez. All rights reserved.
 //
 
 import UIKit
