@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SynchronizedDate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOB-Qq-Rsa">
+                                <rect key="frame" x="169.5" y="305" width="75.5" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIh-ge-zVe">
+                                <rect key="frame" x="169.5" y="444.5" width="75.5" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Synchronized time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmY-bT-oI9">
+                                <rect key="frame" x="130.5" y="244" width="153" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local device time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezj-gi-ykg">
+                                <rect key="frame" x="136.5" y="383.5" width="141.5" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ezj-gi-ykg" firstAttribute="top" secondItem="BOB-Qq-Rsa" secondAttribute="bottom" constant="40" id="8Si-ob-UUT"/>
+                            <constraint firstItem="ezj-gi-ykg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MqB-Yo-NG4"/>
+                            <constraint firstItem="WIh-ge-zVe" firstAttribute="top" secondItem="ezj-gi-ykg" secondAttribute="bottom" constant="40" id="RFf-aI-E21"/>
+                            <constraint firstItem="qmY-bT-oI9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="ZWH-Zp-RxW"/>
+                            <constraint firstItem="BOB-Qq-Rsa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c5j-IY-5Va"/>
+                            <constraint firstItem="WIh-ge-zVe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qaa-qb-7TA"/>
+                            <constraint firstItem="BOB-Qq-Rsa" firstAttribute="top" secondItem="qmY-bT-oI9" secondAttribute="bottom" constant="40" id="tI3-bb-eb0"/>
+                            <constraint firstItem="qmY-bT-oI9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zJv-Me-D4e"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelDeviceTime" destination="WIh-ge-zVe" id="y1r-kj-KVV"/>
+                        <outlet property="labelSynchronized" destination="BOB-Qq-Rsa" id="Hdf-yQ-EuJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
