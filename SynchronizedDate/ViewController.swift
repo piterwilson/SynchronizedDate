@@ -50,6 +50,7 @@ class ViewController: UIViewController {
     private func display(date: Date, inLabel label: UILabel) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         label.text = dateFormatter.string(from: date)
     }
 }
