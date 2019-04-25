@@ -21,17 +21,18 @@ class ViewController: UIViewController {
         fetchSourceOftruthDate()
         reloadLocalTime()
     }
+    /// Creates event listeners to keep the date synchronized
     private func addEventListeners() {
-        NotificationCenter.default.addObserver(self, selector: #selector(resyncDate), name: Notification.Name.NSSystemClockDidChange, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(resyncDate), name: UIApplication.significantTimeChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(syncDate), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(syncDate), name: Notification.Name.NSSystemClockDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(syncDate), name: UIApplication.significantTimeChangeNotification, object: nil)
     }
-    @objc private func resyncDate() {
+    /// Attemps to resynchronize both remote and local `Date`
+    @objc private func syncDate() {
         fetchSourceOftruthDate()
         reloadLocalTime()
     }
-    private func reloadLocalTime() {
-        display(date: Date(), inLabel: labelDeviceTime)
-    }
+    /// Calls `fetchSourceOfTruthDate(completion:)`
     private func fetchSourceOftruthDate() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         labelSynchronized.text = "Loading..."
@@ -48,6 +49,11 @@ class ViewController: UIViewController {
             }
         })
     }
+    /// Outputs the local "unsynchronized" Date to the `labelDeviceTime`
+    private func reloadLocalTime() {
+        display(date: Date(), inLabel: labelDeviceTime)
+    }
+    /// A convenience method to display a formatted date in a `UILabel`
     private func display(date: Date, inLabel label: UILabel) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
